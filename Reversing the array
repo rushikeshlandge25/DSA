@@ -1,0 +1,14 @@
+#include <vector>
+using namespace std;
+
+class Solution {
+  public:
+    void reverseArray(vector<int> &arr) {
+        int n = arr.size();
+        vector<int> rev;  
+        for (int i = n - 1; i >= 0; i--) {  
+            rev.push_back(arr[i]);
+        }
+        arr = rev; 
+    }
+};
