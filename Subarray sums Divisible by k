@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int subarraysDivByK(vector<int>& nums, int k) {
+        std::vector<int> vec(k, 0);
+        vec[0] = 1;
+        int count = 0;
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+            int remainder = sum % k;
+            if (remainder < 0) {
+                remainder += k;
+            }
+            count += vec[remainder];
+            vec[remainder]++;
+        }
+        return count;
+    }
+};
